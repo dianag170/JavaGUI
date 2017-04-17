@@ -21,8 +21,19 @@ public class GUIDemo extends JFrame
      */
     public GUIDemo()
     {
-	// CONSTRUCTOR NEEDS TO BE FINISHED!
-    }
+        setTitle("Bigger/Smaller");
+        setSize(200, 100);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel = new JPanel();
+        biggerButton = new JButton("BIGGER");
+        smallerButton = new JButton("SMALLER");
+        biggerButton.addActionListener(new ButtonHandler());
+        smallerButton.addActionListener(new ButtonHandler());
+        add(panel);
+        panel.add(biggerButton);
+        panel.add(smallerButton);
+        setVisible(true);
+ }
 
     /**
      * This inner class exists to handle button events. There are other ways
